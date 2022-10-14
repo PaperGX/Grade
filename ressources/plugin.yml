@@ -1,0 +1,7 @@
+name: Grade
+version: 1.0
+author: PaperGX
+main: fr.papergx.grade.Main
+commands:
+  grade:
+    description: Plugin grade

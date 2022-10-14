@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Grade:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Grade_jar</output-path>
+    <root id="archive" name="Grade.jar">
+      <element id="module-output" name="Grade" />
+    </root>
+  </artifact>
+</component>
