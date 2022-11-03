@@ -25,9 +25,9 @@ public class CommandManager implements CommandExecutor {
                 if(strings[0].equalsIgnoreCase("set")) {
                     if (Bukkit.getPlayer(strings[1]) == null) {return false;}
                     final Player player1 = Bukkit.getPlayer(strings[1]);
-                    final File dataFile = new File("plugins/Grade/dataPlayer.yml");
+                    final File dataFile = new File("plugins/Grade/" + player1.getUniqueId()+ ".yml");
                     final YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(dataFile);
-                    yamlConfiguration.set(player1.getUniqueId().toString()+ ".grade", strings[2].toUpperCase());
+                    yamlConfiguration.set("grade", strings[2].toUpperCase());
                     player.sendMessage(prefix + "Le grade de §a§l" + strings[1] + " §fa été changé avec §a§lsuccès");
                     try {
                         yamlConfiguration.save(dataFile);
