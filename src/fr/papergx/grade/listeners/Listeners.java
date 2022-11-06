@@ -2,6 +2,8 @@ package fr.papergx.grade.listeners;
 
 import fr.papergx.grade.Grade;
 import fr.papergx.grade.GradeList;
+
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,6 +30,8 @@ public class Listeners implements Listener {
     @EventHandler
     public void AsyncChatEvent(AsyncPlayerChatEvent event) {
         GradeList gradeList = grade.getGradePlayer(event.getPlayer());
-        event.setFormat(grade.getPlayerPrefix(event.getPlayer()) + " §f " + event.getPlayer().getName() + "§f"+ "§f §8§l➜ §7" + event.getMessage());
+        event.setFormat(grade.getPlayerPrefix(event.getPlayer()) + ChatColor.RESET + " %1$s" + ChatColor.DARK_GRAY + ChatColor.BOLD + " ➜ " + ChatColor.GRAY + "%2$s");
+        //"%1$s" évite une exploitation du chat lié au pseudo!
+        //"%2$s" evite une exploitation du chat lié au message! si tu veut essayer le problème rentre l'une de ces deux valeurs dans ton chat ^^
     }
 }

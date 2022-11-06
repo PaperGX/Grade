@@ -15,8 +15,8 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         grade.initscoreboard();
-        getServer().getPluginManager().registerEvents(new Listeners(grade), this);
-        getCommand("grade").setExecutor(new CommandManager());
+        this.getServer().getPluginManager().registerEvents(new Listeners(grade), this);
+        this.getCommand("grade").setExecutor(new CommandManager());
     }
 
     @Override
